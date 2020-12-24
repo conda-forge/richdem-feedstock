@@ -32,6 +32,7 @@ requirements:
     - python
     - setuptools
     - {{ pin_compatible('numpy') }}
+    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.15") }}  # [osx and x86_64]
 
 test:
   imports:
@@ -54,3 +55,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - hobu
