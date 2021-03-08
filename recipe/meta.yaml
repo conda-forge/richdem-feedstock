@@ -9,8 +9,7 @@ source:
   sha256: a9d3119ca8e25aa73039c94816f68ac2e1c33dc8ef02b0467c090d44243a7ad1
 
 build:
-  number: 0
-  skip: True  # [win]
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - rd_depression_filling=richdem.cli:DepressionFilling
@@ -24,13 +23,17 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - libgdal
   host:
     - python
     - pip
     - numpy
+    - libgdal
+
   run:
     - python
     - setuptools
+    - libgdal
     - {{ pin_compatible('numpy') }}
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.15") }}  # [osx and x86_64]
 
