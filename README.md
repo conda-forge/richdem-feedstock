@@ -3,7 +3,7 @@ About richdem
 
 Home: https://github.com/r-barnes/richdem
 
-Package license: GPL-3.0
+Package license: gpl-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/richdem-feedstock/blob/master/LICENSE.txt)
 
