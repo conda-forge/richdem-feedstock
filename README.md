@@ -290,5 +290,7 @@ Feedstock Maintainers
 =====================
 
 * [@hobu](https://github.com/hobu/)
+* [@mcflugen](https://github.com/mcflugen/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@r-barnes](https://github.com/r-barnes/)
 
