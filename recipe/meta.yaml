@@ -54,7 +54,8 @@ test:
 
 about:
   home: https://github.com/r-barnes/richdem
-  license: gpl-3.0-or-later
+  license: GPL-3.0-only
+  license_family: GPL
   license_file: LICENSE.txt
   summary: High-Performance Terrain Analysis
 
