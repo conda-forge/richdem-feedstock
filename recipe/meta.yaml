@@ -1,15 +1,15 @@
-{% set version = "0.3.4" %}
+{% set version = "2.3.0" %}
 
 package:
   name: richdem
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/richdem/richdem-{{ version }}.tar.gz
-  sha256: a9d3119ca8e25aa73039c94816f68ac2e1c33dc8ef02b0467c090d44243a7ad1
+  url: https://github.com/r-barnes/richdem/archive/v{{ version }}.tar.gz
+  sha256: 5ea5b70a8dde16f19de1b1cbb255bcda34ce5e82039aa004d6f81136fe302a86
 
 build:
-  number: 6
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - rd_depression_filling=richdem.cli:DepressionFilling
@@ -60,5 +60,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - r-barnes
+    - mcflugen
     - ocefpaf
     - hobu
