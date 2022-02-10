@@ -10,47 +10,47 @@ source:
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  entry_points:
-    - rd_depression_filling=richdem.cli:DepressionFilling
-    - rd_breach_depressions=richdem.cli:BreachDepressions
-    - rd_flow_accumulation=richdem.cli:FlowAccumulation
-    - rd_terrain_attribute=richdem.cli:TerrainAttribute
-    - rd_info=richdem.cli:RdInfo
-    - rd_compare=richdem.cli:RdCompare
+  skip: true  # [win]
+  patches:
+  - install-shared-lib.patch
+  - link-shared-lib.patch
+  # script: "{{ PYTHON }} -m pip install wrappers/pyrichdem --no-deps -vv"
+  # entry_points:
+  #   - rd_depression_filling=richdem.cli:DepressionFilling
+  #   - rd_breach_depressions=richdem.cli:BreachDepressions
+  #   - rd_flow_accumulation=richdem.cli:FlowAccumulation
+  #   - rd_terrain_attribute=richdem.cli:TerrainAttribute
+  #   - rd_info=richdem.cli:RdInfo
+  #   - rd_compare=richdem.cli:RdCompare
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - libgdal
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
 
   host:
     - python
     - pip
     - numpy
     - libgdal
+    - pybind11
 
   run:
     - python
     - setuptools
     - libgdal
-    - {{ pin_compatible('numpy') }}
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.15") }}  # [osx and x86_64]
+    - numpy
 
 test:
   imports:
     - richdem
-  commands:
-    - rd_depression_filling --help
-    - rd_breach_depressions --help
-    - rd_flow_accumulation --help
-    - rd_terrain_attribute --help
-    - rd_info --help
-    - rd_compare --help
+  # commands:
+  #   - rd_depression_filling --help
+  #   - rd_breach_depressions --help
+  #   - rd_flow_accumulation --help
+  #   - rd_terrain_attribute --help
+  #   - rd_info --help
+  #   - rd_compare --help
 
 about:
   home: https://github.com/r-barnes/richdem
