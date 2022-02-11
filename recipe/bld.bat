@@ -6,7 +6,7 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DCMAKE_CXX_FLAGS="-std=c++11" ^
+      -DCMAKE_CXX_FLAGS="/std:c++11" ^
       -DUSE_GDAL=ON ^
       %SRC_DIR%
 
