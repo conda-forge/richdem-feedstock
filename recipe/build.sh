@@ -19,6 +19,7 @@ mkdir _build && cd _build
 cmake ${CMAKE_ARGS} .. \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_CXX_STANDARD=11 \
   -DUSE_GDAL=ON
 
 make all -j$CPU_COUNT
