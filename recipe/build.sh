@@ -16,7 +16,7 @@ fi
 
 
 mkdir _build && cd _build
-cmake .. \
+cmake ${CMAKE_ARGS} .. \
   -DCMAKE_INSTALL_PREFIX=$PREFIX \
   -DCMAKE_BUILD_TYPE=Release \
   -DUSE_GDAL=ON

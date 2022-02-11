@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  skip: true
   # script: "{{ PYTHON }} -m pip install wrappers/pyrichdem --no-deps -vv"
   # entry_points:
   #   - rd_depression_filling=richdem.cli:DepressionFilling
@@ -24,11 +24,14 @@ build:
   #   - rd_compare=richdem.cli:RdCompare
 
 requirements:
+  run_constrained:  # [osx]
+        - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx]
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
     - make
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
   host:
     - python
