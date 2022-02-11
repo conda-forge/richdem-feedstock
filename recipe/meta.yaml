@@ -7,6 +7,9 @@ package:
 source:
   url: https://github.com/r-barnes/richdem/archive/v{{ version }}.tar.gz
   sha256: 5ea5b70a8dde16f19de1b1cbb255bcda34ce5e82039aa004d6f81136fe302a86
+  patches:
+  - install-shared-lib.patch
+  - link-shared-lib.patch
 
 build:
   number: 0
