@@ -10,6 +10,7 @@ source:
   patches:
   - install-shared-lib.patch  # [ not win]
   - link-shared-lib.patch  # [ not win]
+  - include-numeric.patch  # [win]
 
 build:
   number: 0
