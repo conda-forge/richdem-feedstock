@@ -1,5 +1,5 @@
-# export CXXFLAGS="-std=c++11"
-export CXXFLAGS="-std=c++17"
+export CXXFLAGS="-std=c++11"
+# export CXXFLAGS="-std=c++17"
 export MACOSX_DEPLOYMENT_TARGET="10.15"
 
 mkdir _build && cd _build
