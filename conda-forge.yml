@@ -6,3 +6,7 @@ provider:
   linux_ppc64le: azure
   win: azure
 test_on_native_only: true
+azure:
+  settings_win:
+    pool:
+      vmImage: windows-2019
