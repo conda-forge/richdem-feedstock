@@ -39,6 +39,7 @@ requirements:
     - python {{ python }}
     - pybind11
     - libgdal
+    - openmp
 
   host:
     - python {{ python }}
