@@ -8,9 +8,12 @@ source:
   url: https://github.com/r-barnes/richdem/archive/v{{ version }}.tar.gz
   sha256: 5ea5b70a8dde16f19de1b1cbb255bcda34ce5e82039aa004d6f81136fe302a86
   patches:
-  - install-shared-lib.patch  # [ not win]
-  - link-shared-lib.patch  # [ not win]
-  - include-numeric.patch  # [win]
+  - install-shared-lib.patch
+  - link-shared-lib.patch
+  - include-numeric.patch
+  - path-to-string.patch
+  - rename-error.patch
+  - win32-defs.patch
 
 build:
   number: 0
