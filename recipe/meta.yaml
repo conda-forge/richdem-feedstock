@@ -17,7 +17,8 @@ source:
 
 build:
   number: 0
-  skip: false
+  skip: true  # [unix]
+  # skip: false
   # skip: true  # [(win and vc<14) or py<36]
   # script: "{{ PYTHON }} -m pip install wrappers/pyrichdem --no-deps -vv"
   # entry_points:
