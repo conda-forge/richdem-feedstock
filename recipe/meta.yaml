@@ -41,6 +41,7 @@ requirements:
     - python {{ python }}
     - pybind11
     - libgdal
+    - pip
 
   host:
     - python {{ python }}
