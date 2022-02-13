@@ -2,10 +2,8 @@ mkdir build
 cd build
 
 cmake -G "NMake Makefiles" ^
-      -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_INSTALL_PREFIX:PATH="%CONDA_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
-      -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
-      -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
       -DCMAKE_CXX_STANDARD="11" ^
       -DUSE_GDAL=ON ^
       %SRC_DIR%
