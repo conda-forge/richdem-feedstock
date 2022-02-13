@@ -17,17 +17,15 @@ source:
 
 build:
   number: 0
-  skip: true  # [unix]
-  # skip: false
+  skip: false
   # skip: true  # [(win and vc<14) or py<36]
-  # script: "{{ PYTHON }} -m pip install wrappers/pyrichdem --no-deps -vv"
-  # entry_points:
-  #   - rd_depression_filling=richdem.cli:DepressionFilling
-  #   - rd_breach_depressions=richdem.cli:BreachDepressions
-  #   - rd_flow_accumulation=richdem.cli:FlowAccumulation
-  #   - rd_terrain_attribute=richdem.cli:TerrainAttribute
-  #   - rd_info=richdem.cli:RdInfo
-  #   - rd_compare=richdem.cli:RdCompare
+  entry_points:
+    - rd_depression_filling=richdem.cli:DepressionFilling
+    - rd_breach_depressions=richdem.cli:BreachDepressions
+    - rd_flow_accumulation=richdem.cli:FlowAccumulation
+    - rd_terrain_attribute=richdem.cli:TerrainAttribute
+    - rd_info=richdem.cli:RdInfo
+    - rd_compare=richdem.cli:RdCompare
 
 requirements:
   run_constrained:  # [osx]
@@ -60,13 +58,13 @@ requirements:
 test:
   imports:
     - richdem
-  # commands:
-  #   - rd_depression_filling --help
-  #   - rd_breach_depressions --help
-  #   - rd_flow_accumulation --help
-  #   - rd_terrain_attribute --help
-  #   - rd_info --help
-  #   - rd_compare --help
+  commands:
+    - rd_depression_filling --help
+    - rd_breach_depressions --help
+    - rd_flow_accumulation --help
+    - rd_terrain_attribute --help
+    - rd_info --help
+    - rd_compare --help
 
 about:
   home: https://github.com/r-barnes/richdem
