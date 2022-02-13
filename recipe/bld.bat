@@ -19,4 +19,4 @@ nmake install
 if errorlevel 1 exit 1
 
 cd ../wrappers/pyrichdem
-pip install . -vv
+"%PYTHON%" -m pip install . --no-deps -vv
