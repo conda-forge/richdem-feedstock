@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 3f14067..1aa9270 100644
+index 3f14067..fd262fd 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -10,6 +10,11 @@ find_package(GDAL)
@@ -14,7 +14,7 @@ index 3f14067..1aa9270 100644
  add_subdirectory(apps)
  
  if(MPI_CXX_FOUND)
-@@ -87,4 +92,8 @@ add_executable(richdem_unittests
+@@ -87,4 +92,13 @@ add_executable(richdem_unittests
    tests/tests.cpp
  )
  target_link_libraries(richdem_unittests PRIVATE richdem)
@@ -23,5 +23,10 @@ index 3f14067..1aa9270 100644
 +target_compile_features(richdem_unittests PRIVATE cxx_std_17)
 +
 +
-+install(TARGETS richdem DESTINATION lib)
++install(
++  TARGETS richdem
++  LIBRARY DESTINATION "lib"
++  ARCHIVE DESTINATION "lib"
++  RUNTIME DESTINATION "bin"
++)
 +install(DIRECTORY include/richdem DESTINATION include)
