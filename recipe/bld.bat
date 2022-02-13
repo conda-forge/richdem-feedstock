@@ -18,5 +18,5 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
-cd wrappers/pyrichdem
+cd ../wrappers/pyrichdem
 pip install . -vv
