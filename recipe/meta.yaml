@@ -57,6 +57,7 @@ requirements:
 
 test:
   imports:
+    - _richdem
     - richdem
   commands:
     - rd_depression_filling --help
