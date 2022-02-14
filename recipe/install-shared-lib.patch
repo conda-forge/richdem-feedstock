@@ -1,0 +1,32 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3f14067..fd262fd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -10,6 +10,11 @@ find_package(GDAL)
+ find_package(OpenMP)
+ find_package(MPI)
+ 
++set(CMAKE_MACOSX_RPATH 1)
++set(BUILD_SHARED_LIBS ON)
++set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON) 
++
+ add_subdirectory(apps)
+ 
+ if(MPI_CXX_FOUND)
+@@ -87,4 +92,13 @@ add_executable(richdem_unittests
+   tests/tests.cpp
+ )
+ target_link_libraries(richdem_unittests PRIVATE richdem)
+-target_compile_features(richdem_unittests PRIVATE cxx_std_17)
+\ No newline at end of file
++target_compile_features(richdem_unittests PRIVATE cxx_std_17)
++
++
++install(
++  TARGETS richdem
++  LIBRARY DESTINATION "lib"
++  ARCHIVE DESTINATION "lib"
++  RUNTIME DESTINATION "bin"
++)
++install(DIRECTORY include/richdem DESTINATION include)

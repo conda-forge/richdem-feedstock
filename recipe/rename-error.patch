@@ -1,0 +1,51 @@
+diff --git a/include/richdem/common/logger.hpp b/include/richdem/common/logger.hpp
+index 2122c00..5bec4f5 100644
+--- a/include/richdem/common/logger.hpp
++++ b/include/richdem/common/logger.hpp
+@@ -12,7 +12,7 @@ enum LogFlag {
+   CITATION,
+   CONFIG,
+   DEBUG,
+-  ERROR,
++  ERROR_,
+   MEM_USE,
+   MISC,
+   PROGRESS,
+@@ -63,7 +63,7 @@ class StreamLogger {
+ #define RDLOG_CITATION StreamLogger(LogFlag::CITATION, __FILE__, __func__, __LINE__)
+ #define RDLOG_CONFIG   StreamLogger(LogFlag::CONFIG,   __FILE__, __func__, __LINE__)
+ #define RDLOG_DEBUG    StreamLogger(LogFlag::DEBUG,    __FILE__, __func__, __LINE__)
+-#define RDLOG_ERROR    StreamLogger(LogFlag::ERROR,    __FILE__, __func__, __LINE__)      
++#define RDLOG_ERROR    StreamLogger(LogFlag::ERROR_,   __FILE__, __func__, __LINE__)
+ #define RDLOG_MEM_USE  StreamLogger(LogFlag::MEM_USE,  __FILE__, __func__, __LINE__)       
+ #define RDLOG_MISC     StreamLogger(LogFlag::MISC,     __FILE__, __func__, __LINE__)       
+ #define RDLOG_PROGRESS StreamLogger(LogFlag::PROGRESS, __FILE__, __func__, __LINE__)
+diff --git a/src/richdem.cpp b/src/richdem.cpp
+index 53c852e..a3711cf 100644
+--- a/src/richdem.cpp
++++ b/src/richdem.cpp
+@@ -12,7 +12,7 @@ std::map<LogFlag, std::string> log_flag_chars_begin = {
+   {CITATION, "C"},
+   {CONFIG,   "c"},
+   {DEBUG,    "\033[95md"},
+-  {ERROR,    "E"},
++  {ERROR_,   "E"},
+   {MEM_USE,  " "},
+   {MISC,     "m"},
+   {PROGRESS, "p"},
+@@ -25,7 +25,7 @@ std::map<LogFlag, std::string> log_flag_chars_end = {
+   {CITATION, "\n"},
+   {CONFIG,   ""},
+   {DEBUG,    ""},
+-  {ERROR,    ""},
++  {ERROR_,   ""},
+   {MEM_USE,  ""},
+   {MISC,     ""},
+   {PROGRESS, ""},
+@@ -43,4 +43,4 @@ void RDLOGfunc(LogFlag flag, const char* file, const char* func, unsigned line,
+   <<std::endl;
+ }
+ 
+-}
+\ No newline at end of file
++}

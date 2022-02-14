@@ -3,7 +3,7 @@ About richdem
 
 Home: https://github.com/r-barnes/richdem
 
-Package license: gpl-3.0-or-later
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/richdem-feedstock/blob/master/LICENSE.txt)
 
@@ -290,5 +290,7 @@ Feedstock Maintainers
 =====================
 
 * [@hobu](https://github.com/hobu/)
+* [@mcflugen](https://github.com/mcflugen/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@r-barnes](https://github.com/r-barnes/)
 
