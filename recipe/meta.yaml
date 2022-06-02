@@ -16,7 +16,7 @@ source:
   - win32-defs.patch
 
 build:
-  number: 1
+  number: 2
   skip: false
   entry_points:
     - rd_depression_filling=richdem.cli:DepressionFilling
