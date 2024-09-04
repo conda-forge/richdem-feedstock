@@ -46,6 +46,7 @@ requirements:
     - numpy
     - libgdal
     - pybind11
+    - setuptools
 
   run:
     - python {{ python }}
