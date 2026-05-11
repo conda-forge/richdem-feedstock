@@ -330,6 +330,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@giswqs](https://github.com/giswqs/)
 * [@hobu](https://github.com/hobu/)
 * [@mcflugen](https://github.com/mcflugen/)
 * [@ocefpaf](https://github.com/ocefpaf/)
