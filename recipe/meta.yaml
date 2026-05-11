@@ -40,6 +40,7 @@ requirements:
     - libgdal
     - pybind11
     - setuptools
+    - openmp
 
   run:
     - python {{ python }}
