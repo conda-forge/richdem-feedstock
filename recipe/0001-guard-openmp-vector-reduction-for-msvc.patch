@@ -47,6 +47,15 @@ index 1d83b7d..6e00b32 100644
    for (int y = 0; y < dem.height(); y++)     // Look at all the cells
      for (int x = 0; x < dem.width(); x++) {  // Yes, all of them
        ++progress;
+@@ -847,7 +859,7 @@ void CalculateMarginalVolumes(
+     CachingOutletChecker<elev_t> coc;
+ 
+ #pragma omp for
+-    for (unsigned int i = 0; i < dem.size(); i++) {
++    for (int64_t i = 0; i < static_cast<int64_t>(dem.size()); i++) {
+       ++progress;
+       const auto my_elev = dem(i);
+       auto clabel        = label(i);
 @@ -949,3 +961,5 @@ void LastLayer(Array2D<dh_label_t>& label, const Array2D<elev_t>& dem, const Dep
  }
  
