@@ -22,6 +22,8 @@ libgdal:
 - '3.12'
 libgdal_core:
 - '3.12'
+llvm_openmp:
+- '19'
 macos_machine:
 - arm64-apple-darwin20.0.0
 numpy:
