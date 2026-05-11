@@ -40,7 +40,7 @@ requirements:
     - libgdal-core
     - pybind11
     - setuptools
-    - llvm-openmp
+    - llvm-openmp  # [not win]
 
   run:
     - python {{ python }}
