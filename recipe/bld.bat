@@ -6,7 +6,6 @@ cmake -G "NMake Makefiles" ^
       -DCMAKE_BUILD_TYPE:STRING=Release ^
       -DCMAKE_LIBRARY_PATH="%LIBRARY_LIB%" ^
       -DCMAKE_INCLUDE_PATH="%INCLUDE_INC%" ^
-      -DCMAKE_DISABLE_FIND_PACKAGE_MPI=TRUE ^
       -DCMAKE_CXX_STANDARD="11" ^
       -DUSE_GDAL=ON ^
       %SRC_DIR%

@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/giswqs/richdem2/archive/v{{ version }}.tar.gz
   sha256: 143bcffd3f2652af21d141321ac0f449d26210172855b115504d5a0264dbf898
+  patches:
+    - 0001-guard-openmp-vector-reduction-for-msvc.patch
 
 build:
   number: 0
@@ -40,6 +42,7 @@ requirements:
     - libgdal-core
     - pybind11
     - setuptools
+    - boost
     - llvm-openmp  # [not win]
 
   run:
