@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/giswqs/richdem2/archive/v{{ version }}.tar.gz
-  sha256: 5ea5b70a8dde16f19de1b1cbb255bcda34ce5e82039aa004d6f81136fe302a86
+  sha256: 143bcffd3f2652af21d141321ac0f449d26210172855b115504d5a0264dbf898
 
 build:
   number: 0
