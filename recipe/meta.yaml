@@ -42,7 +42,6 @@ requirements:
     - libgdal-core
     - pybind11
     - setuptools
-    - boost
     - llvm-openmp  # [not win]
 
   run:
