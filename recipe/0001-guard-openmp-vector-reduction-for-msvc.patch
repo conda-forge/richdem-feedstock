@@ -1,5 +1,31 @@
+diff --git a/apps/rd_depression_hierarchy.cpp b/apps/rd_depression_hierarchy.cpp
+index 4971729..8950295 100644
+--- a/apps/rd_depression_hierarchy.cpp
++++ b/apps/rd_depression_hierarchy.cpp
+@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
+ // Label the ocean cells. This is a precondition for using
+ //`GetDepressionHierarchy()`.
+ #pragma omp parallel for
+-  for (unsigned int i = 0; i < label.size(); i++) {
++  for (int64_t i = 0; i < static_cast<int64_t>(label.size()); i++) {
+     // Ocean Level is assumed to be lower than any other cells (even Death Valley)
+     if (topo.isNoData(i) || topo(i) == ocean_level) {
+       label(i) = dh::OCEAN;
+diff --git a/apps/rd_fill_spill_merge.cpp b/apps/rd_fill_spill_merge.cpp
+index 19ce2bf..23c6f9e 100644
+--- a/apps/rd_fill_spill_merge.cpp
++++ b/apps/rd_fill_spill_merge.cpp
+@@ -73,7 +73,7 @@ int main(int argc, char** argv) {
+ 
+ // Make NoData cells also ocean cells. Ocean has no water on it to begin with.
+ #pragma omp parallel for
+-  for (unsigned int i = 0; i < label.size(); i++) {
++  for (int64_t i = 0; i < static_cast<int64_t>(label.size()); i++) {
+     if (topo.isNoData(i) || label(i) == dh::OCEAN) {
+       label(i) = dh::OCEAN;
+       wtd(i)   = 0;
 diff --git a/include/richdem/depressions/depression_hierarchy.hpp b/include/richdem/depressions/depression_hierarchy.hpp
-index 1d83b7d..6e00b32 100644
+index 1d83b7d..3ee815a 100644
 --- a/include/richdem/depressions/depression_hierarchy.hpp
 +++ b/include/richdem/depressions/depression_hierarchy.hpp
 @@ -29,6 +29,12 @@
@@ -47,7 +73,7 @@ index 1d83b7d..6e00b32 100644
    for (int y = 0; y < dem.height(); y++)     // Look at all the cells
      for (int x = 0; x < dem.width(); x++) {  // Yes, all of them
        ++progress;
-@@ -847,7 +859,7 @@ void CalculateMarginalVolumes(
+@@ -835,7 +847,7 @@ void CalculateMarginalVolumes(
      CachingOutletChecker<elev_t> coc;
  
  #pragma omp for
