@@ -43,12 +43,14 @@ requirements:
     - pybind11
     - setuptools
     - llvm-openmp  # [not win]
+    - vcomp14  # [win]
 
   run:
     - python {{ python }}
     - setuptools
     - libgdal-core
     - numpy
+    - vcomp14  # [win]
 
 test:
   imports:
