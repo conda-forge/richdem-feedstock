@@ -19,9 +19,9 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 libgdal:
-- '3.12'
+- '3.13'
 libgdal_core:
-- '3.12'
+- '3.13'
 llvm_openmp:
 - '19'
 macos_machine:

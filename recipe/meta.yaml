@@ -1,4 +1,4 @@
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: richdem
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/giswqs/richdem2/archive/v{{ version }}.tar.gz
-  sha256: 143bcffd3f2652af21d141321ac0f449d26210172855b115504d5a0264dbf898
+  sha256: b9006d131bd6f84448d13817830e02d8f864d7a26e83f65ec910bb28f50796bc
   patches:
     - 0001-guard-openmp-vector-reduction-for-msvc.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [ppc64le]
   entry_points:
     - rd_depression_filling=richdem.cli:DepressionFilling
