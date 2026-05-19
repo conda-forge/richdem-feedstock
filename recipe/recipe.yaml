@@ -1,0 +1,85 @@
+schema_version: 1
+
+context:
+  version: "2.4.2"
+
+package:
+  name: richdem
+  version: ${{ version }}
+
+source:
+  url: https://github.com/giswqs/richdem2/archive/v${{ version }}.tar.gz
+  sha256: 469cbee2df251c3dd404c29cf5dacda994b2faf8defad849c3e611ec7cfc012d
+
+build:
+  number: 1
+  skip: ppc64le
+  python:
+    entry_points:
+      - rd_depression_filling=richdem.cli:DepressionFilling
+      - rd_breach_depressions=richdem.cli:BreachDepressions
+      - rd_flow_accumulation=richdem.cli:FlowAccumulation
+      - rd_terrain_attribute=richdem.cli:TerrainAttribute
+      - rd_info=richdem.cli:RdInfo
+      - rd_compare=richdem.cli:RdCompare
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - make
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - python ${{ python }}
+    - pybind11
+    - libgdal
+    - pip
+  host:
+    - python ${{ python }}
+    - pip
+    - numpy
+    - libgdal-core
+    - pybind11
+    - setuptools
+    - if: not win
+      then: llvm-openmp
+    - if: win
+      then: vcomp14
+  run:
+    - python ${{ python }}
+    - setuptools
+    - libgdal-core
+    - numpy
+    - if: win
+      then: vcomp14
+  run_constraints:
+
+tests:
+  - python:
+      imports:
+        - _richdem
+        - richdem
+      pip_check: false
+  - script:
+      - rd_depression_filling --help
+      - rd_breach_depressions --help
+      - rd_flow_accumulation --help
+      - rd_terrain_attribute --help
+      - rd_info --help
+      - rd_compare --help
+
+about:
+  license: GPL-3.0-only
+  license_file: LICENSE.txt
+  summary: High-Performance Terrain Analysis
+  homepage: https://github.com/r-barnes/richdem
+
+extra:
+  recipe-maintainers:
+    - r-barnes
+    - mcflugen
+    - ocefpaf
+    - hobu
+    - giswqs
