@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/giswqs/richdem2/archive/v{{ version }}.tar.gz
   sha256: 469cbee2df251c3dd404c29cf5dacda994b2faf8defad849c3e611ec7cfc012d
-  patches:
-    - 0001-guard-openmp-vector-reduction-for-msvc.patch
 
 build:
   number: 0
