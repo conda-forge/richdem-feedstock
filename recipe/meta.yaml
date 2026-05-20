@@ -1,4 +1,4 @@
-{% set version = "2.4.2" %}
+{% set version = "2.4.3" %}
 
 package:
   name: richdem
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/giswqs/richdem2/archive/v{{ version }}.tar.gz
-  sha256: 469cbee2df251c3dd404c29cf5dacda994b2faf8defad849c3e611ec7cfc012d
+  sha256: 7bece67947a14e8b607aea8f6aa7cb56e928ab458ea709e2bfead170c7e8eb90
 
 build:
   number: 0
