@@ -2,7 +2,6 @@ schema_version: 1
 
 context:
   version: "2.4.3"
-  python_min: "3.11.0"
 
 package:
   name: richdem
@@ -33,12 +32,12 @@ requirements:
     - make
     - if: build_platform != target_platform
       then: cross-python_${{ target_platform }}
-    - python ${{ python_min }}.*
+    - python
     - pybind11
     - libgdal
     - pip
   host:
-    - python >=${{ python_min }}
+    - python
     - pip
     - numpy
     - libgdal-core
@@ -49,7 +48,7 @@ requirements:
     - if: win
       then: vcomp14
   run:
-    - python >=${{ python_min }}
+    - python
     - setuptools
     - libgdal-core
     - numpy
@@ -84,4 +83,3 @@ extra:
     - ocefpaf
     - hobu
     - giswqs
-
