@@ -12,7 +12,7 @@ source:
   sha256: 7bece67947a14e8b607aea8f6aa7cb56e928ab458ea709e2bfead170c7e8eb90
 
 build:
-  number: 1
+  number: 2
   skip: ppc64le
   python:
     entry_points:
@@ -45,8 +45,7 @@ requirements:
     - setuptools
     - if: not win
       then: llvm-openmp
-    - if: win
-      then: vcomp14
+      else: vcomp14
   run:
     - python
     - setuptools
